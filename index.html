@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=css-tricks.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="title">Kanban Board</h1>
+    </header>
+
+    <!-- TASK TEMPLATE HTML -->
+
+    <template draggable="true">
+        <div class="task-type"></div>
+        <p class="task-name"></p>
+        <div class="edit-task"><i class="fa-solid fa-pencil"></i></div>
+    </template>
+
+
+    <main>
+        <!-- TO DO SECTION -->
+        <section class="section-1">
+            <div class="section-header">
+                <div class="section-title"><span>To Do</span></div>
+            </div>
+            <div class="tasks-container"></div>
+
+            <!-- Add Task -->
+            <div class="add-task-section">
+                <div class="add-task-icon">+</div>
+                <input type="textbox" maxlength="100" class="add-task add-task-todo" placeholder="Add Task">
+            </div>
+        </section>
+
+        <!-- IN PROGRESS SECTION -->
+        <section class="section-2">
+            <div class="section-header">
+                <div class="section-title"><span>In progress</span></div>
+            </div>
+            <div class="tasks-container"></div>
+
+            <!-- Add Task -->
+            <div class="add-task-section">
+                <div class="add-task-icon">+</div>
+                <input type="textbox" maxlength="100" class="add-task add-task-todo" placeholder="Add Task">
+            </div>
+        </section>
+
+        <!-- DONE SECTION -->
+        <section class="section-3">
+            <div class="section-header">
+                <div class="section-title"><span>Done</span></div>
+            </div>
+            <div class="tasks-container"></div>
+
+            <!-- Add Task -->
+            <div class="add-task-section">
+                <div class="add-task-icon">+</div>
+                <input type="textbox" maxlength="100" class="add-task add-task-todo" placeholder="Add Task">
+            </div>
+        </section>
+
+    </main>
+    <!-- MODAL FOR EDITING/DELETING TASKS -->
+    <div class="modal-backdrop hide"></div>
+
+    <div class="edit-modal hide">
+        <p class="modal-titles">Task:</p>
+        <input type="textbox" maxlength="100" class="task-edit task-name-edit">
+        <p class="modal-titles">Description:</p>
+        <textarea class="task-edit task-notes" placeholder="Additional Task Notes"></textarea>
+
+        <p class="modal-titles">Move To:</p>
+        <div class="modal-titles section-radio-block">
+            <label for="section-radios" class="section-modal-label">To Do
+                <input name="section" type="radio" class="section-radio-1 section-radio" value="section-1"></label>
+            <label for="section-radios" class="section-modal-label">In Progresss
+                <input name="section" type="radio" class="section-radio-2 section-radio" value="section-2"></label>
+            <label for="section-radios" class="section-modal-label">Done
+                <input name="section" type="radio" class="section-radio-3 section-radio" value="section-3"></label>
+        </div>
+
+        <p class="modal-titles">Colour:</p>
+        <div class="modal-titles color-section">
+            <label for="color-radio">
+                <input name="color" type="radio" class="task-color task-color-1" value="color-1"></label>
+            <label for="color-radio">
+                <input name="color" type="radio" class="task-color task-color-2" value="color-2"></label>
+            <label for="color-radio">
+                <input name="color" type="radio" class="task-color task-color-3" value="color-3"></label>
+            <label for="color-radio">
+                <input name="color" type="radio" class="task-color task-color-4" value="color-4"></label>
+        </div>
+
+        <div class="modal-buttons">
+            <button class="btn btn-save">Save</button>
+            <button class="btn btn-delete">Delete</button>
+
+        </div>
+
+        <i class="modal-icons close-modal fa-solid fa-x"></i>
+    </div>
+
+</body>
+
+</html>

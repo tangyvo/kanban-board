@@ -1,0 +1,300 @@
+:root {
+    --background-color: rgb(255, 255, 255);
+    --accent-color: rgb(226, 254, 252);
+    --border-radius: 5px;
+    --color-1: rgb(252, 188, 188);
+    --color-2: rgb(177, 177, 213);
+    --color-3: rgb(245, 245, 169);
+    --color-4: rgb(134, 197, 243);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100vh;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.25rem;
+    line-height: 3rem;
+    
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--accent-color);
+    height: 50px;
+    width: 100vw;
+}
+
+main {
+    display: flex;
+    width: 99vw;
+    justify-content: center;
+}
+
+section {
+    width: 33%;
+    min-width: 200px;
+    background-color: var(--background-color);
+    margin: 10px 5px;
+    padding: 10px 5px;
+    border-radius: var(--border-radius);
+    user-select: none;
+}
+
+.section-header {
+    height: 35px;
+    margin: 5px;
+}
+
+.section-header span {
+    background-color:var(--accent-color);
+    padding: 3px 10px;
+    border-radius: var(--border-radius);
+}
+
+/* TASKS */
+
+.task {
+    background-color: white;
+    border: 1px solid rgb(109, 109, 109);
+    border-radius: var(--border-radius);
+    margin: 10px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px 3px rgba(149, 149, 149, 0.15);
+    overflow: hidden;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.task-type {
+    position: absolute;
+    inset: 0;
+    width: 15px;
+    align-self: center;
+}
+
+.color-1 {
+    background-color: var(--color-1);
+}
+
+.color-2 {
+    background-color: var(--color-2);
+}
+
+.color-3 {
+    background-color: var(--color-3);
+}
+
+.color-4 {
+    background-color: var(--color-4);
+}
+
+.task-name {
+    padding: 5px;
+    padding-left: 20px;
+    width: calc(100% - 60px);
+}
+
+.edit-task {
+    margin: auto;
+    padding: 5px;
+}
+
+/* ADD TASK INPUT */
+
+.add-task-section {
+    display: flex;
+    border: 1px solid grey;
+    border-radius: var(--border-radius);
+    margin: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.add-task-icon {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin: auto 0;
+    font-size: 1.5rem;
+}
+
+.add-task {
+    height: 30px;
+    margin: 5px;
+    width: 95%;
+    align-self: center;
+    position: relative;
+    border: 0;
+}
+
+/* MODAL FOR EDITING TASKS */
+
+.modal-backdrop {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0,0,0,.9);
+}
+
+.edit-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: var(--border-radius);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: whitesmoke;
+    height: 400px;
+    width: 400px;
+
+}
+
+.modal-titles {
+    width: 80%;
+    font-size: .8rem;
+    font-weight: 800;
+}
+
+.task-edit {
+    border-radius: var(--border-radius);
+    width: 80%;
+    min-height: 35px;
+    border: none;
+}
+
+.task-notes {
+    height: 100px;
+    font-family: inherit;
+    resize: none;
+}
+
+.task-color {
+    position: relative;
+}
+
+.task-color::before {
+    position: absolute;
+    content: '';
+    top: -40%;
+    right: 150%;
+    height: 25px;
+    width: 25px;
+    border-radius: var(--border-radius);
+}
+
+.task-color-1::before {
+    background-color: var(--color-1);
+}
+
+.task-color-2::before {
+    background-color: var(--color-2);
+}
+
+.task-color-3::before {
+    background-color: var(--color-3);
+}
+
+.task-color-4::before {
+    background-color: var(--color-4);
+}
+
+.color-section label {
+    margin: 0 30px;
+}
+
+.section-modal-label {
+    max-width: 20px;
+    margin-right: 20px;
+    font-weight: 400;
+}
+
+.modal-buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    border: none;
+    font-size: .9rem;
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+    padding: .5em .9em;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.15);
+}
+
+.btn:active {
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+
+}
+
+.btn:hover {
+    background-color: transparent;
+}
+
+.fa-x {
+    background-color: transparent;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.fa-x:hover {
+    color: var(--accent-color);
+}
+
+.hide {
+    display: none;
+}
+
+/* MOBILE DISPLAY */
+
+@media screen and (max-width: 700px) {
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        width: 98%;
+    }
+
+    .task {
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    .add-task {
+        margin: 10px 0;
+    }
+}
