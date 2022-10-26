@@ -246,6 +246,7 @@ document.addEventListener('click', (e) => {
 
 // Pressing Enter key to add new task
 document.addEventListener('keypress', (e) => {
+  e.preventDefault();
   const modal = document.querySelector('.modal-backdrop');
   if ((e.key === 'Enter' && !(activeSection.tempTaskName === '')) || e.keyCode === 13) {
     addNewTask();
