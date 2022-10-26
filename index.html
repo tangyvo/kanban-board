@@ -72,27 +72,27 @@
 
     </main>
     <!-- MODAL FOR EDITING/DELETING TASKS -->
-    <div class="modal-backdrop hide"></div>
+    <div class="modal-backdrop"></div>
 
-    <div class="edit-modal hide">
+    <div class="edit-modal">
         <p class="modal-titles">Task:</p>
         <input type="textbox" maxlength="100" class="task-edit task-name-edit">
         <p class="modal-titles">Description:</p>
         <textarea class="task-edit task-notes" placeholder="Additional Task Notes"></textarea>
 
         <p class="modal-titles">Move To:</p>
-        <div class="modal-titles section-radio-block">
-            <label for="section-radios" class="section-modal-label">To Do
-                <input name="section" type="radio" class="section-radio-1 section-radio" value="section-1"></label>
-            <label for="section-radios" class="section-modal-label">In Progresss
-                <input name="section" type="radio" class="section-radio-2 section-radio" value="section-2"></label>
-            <label for="section-radios" class="section-modal-label">Done
-                <input name="section" type="radio" class="section-radio-3 section-radio" value="section-3"></label>
+        <div class="modal-titles radio-section section-radio-block">
+            <label for="radio-todo" class="section-modal-label">To Do
+                <input id="radio-todo" name="section" type="radio" class="section-radio-1 section-radio" value="section-1"></label>
+            <label for="radio-inprogress" class="section-modal-label">In Progress
+                <input id="radio-inprogress" name="section" type="radio" class="section-radio-2 section-radio" value="section-2"></label>
+            <label for="radio-done" class="section-modal-label">Done
+                <input id="radio-done" name="section" type="radio" class="section-radio-3 section-radio" value="section-3"></label>
         </div>
 
         <p class="modal-titles">Colour:</p>
-        <div class="modal-titles color-section">
-            <label for="color-radio">
+        <div class="modal-titles radio-section radio-section-color">
+            <label for="color-radio" class="color-label">
                 <input name="color" type="radio" class="task-color task-color-1" value="color-1"></label>
             <label for="color-radio">
                 <input name="color" type="radio" class="task-color task-color-2" value="color-2"></label>

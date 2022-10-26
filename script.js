@@ -248,11 +248,15 @@ document.addEventListener('click', (e) => {
 document.addEventListener('keypress', (e) => {
   const modal = document.querySelector('.modal-backdrop');
   if (e.key === 'Enter' && !(activeSection.tempTaskName === '')) {
+    document.querySelector('.title').textContent = e.keyCode;
     addNewTask();
+
   } else if (e.key === 'Enter' && !modal.className.includes('hide')) {
     saveModalChanges();
   }
 });
+
+//
 
 /*-------------------
 DRAG AND DROP

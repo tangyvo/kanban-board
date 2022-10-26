@@ -6,6 +6,8 @@
     --color-2: rgb(177, 177, 213);
     --color-3: rgb(245, 245, 169);
     --color-4: rgb(134, 197, 243);
+
+    --default-fontsize: .9rem;
 }
 
 /* New COMMENT */
@@ -23,6 +25,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 100vh;
     position: relative;
+    letter-spacing: 1px;
 }
 
 h1 {
@@ -77,7 +80,7 @@ section {
     border: 1px solid rgb(109, 109, 109);
     border-radius: var(--border-radius);
     margin: 10px;
-    height: 40px;
+    height: auto;
     cursor: pointer;
     box-shadow: 1px 1px 2px 3px rgba(149, 149, 149, 0.15);
     overflow: hidden;
@@ -173,14 +176,16 @@ section {
     top: 50%;
     transform: translateY(-50%);
     background-color: whitesmoke;
-    height: 400px;
-    width: 400px;
+    min-height: 550px;
+    width: 600px;
+    font-size: var(--default-fontsize);
+    overflow: visible;
 
 }
 
 .modal-titles {
     width: 80%;
-    font-size: .8rem;
+    font-size: inherit;
     font-weight: 800;
 }
 
@@ -189,10 +194,11 @@ section {
     width: 80%;
     min-height: 35px;
     border: none;
+    letter-spacing: inherit;
 }
 
 .task-notes {
-    height: 100px;
+    height: 80px;
     font-family: inherit;
     resize: none;
 }
@@ -204,10 +210,10 @@ section {
 .task-color::before {
     position: absolute;
     content: '';
-    top: -40%;
+    top: -20%; 
     right: 150%;
-    height: 25px;
-    width: 25px;
+    height: 40px;
+    width:40px;
     border-radius: var(--border-radius);
 }
 
@@ -227,13 +233,19 @@ section {
     background-color: var(--color-4);
 }
 
-.color-section label {
-    margin: 0 30px;
+.task-color-1:checked ~ {
+    background-color: red;
+}
+
+.radio-section {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 2rem;
+    align-items: center;
+    width: 80%;
 }
 
 .section-modal-label {
-    max-width: 20px;
-    margin-right: 20px;
     font-weight: 400;
 }
 
@@ -245,20 +257,25 @@ section {
 
 .btn {
     border: none;
-    font-size: .9rem;
+    font-size: var(--default-fontsize);
     background-color: var(--accent-color);
     border-radius: var(--border-radius);
-    padding: .5em .9em;
+    padding: .75em 1.25em;
     box-shadow: 2px 2px 2px 1px rgba(0,0,0,.15);
+    margin-top: 2rem;
+    border: 1px solid transparent;
+
 }
 
 .btn:active {
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    transform: translateY(2px);
 
 }
 
 .btn:hover {
     background-color: transparent;
+    border: 1px solid black;
 }
 
 .fa-x {
@@ -272,7 +289,7 @@ section {
 }
 
 .fa-x:hover {
-    color: var(--accent-color);
+    color: rgb(128, 124, 124);
 }
 
 .hide {
@@ -281,7 +298,7 @@ section {
 
 /* MOBILE DISPLAY */
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 650px) {
     main {
         flex-direction: column;
     }
@@ -298,5 +315,10 @@ section {
 
     .add-task {
         margin: 10px 0;
+    }
+
+    .edit-modal {
+        min-width: 100vw;
+        min-height: 100vh;
     }
 }
