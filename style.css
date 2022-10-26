@@ -1,5 +1,5 @@
 :root {
-    --background-color: rgb(247, 247, 247);
+    --background-color: rgb(255,255,255);
     --accent-color: rgb(226, 254, 252);
     --border-radius: 5px;
     --color-1: rgb(252, 188, 188);
@@ -127,7 +127,7 @@ section {
     display: flex;
     border: 1px solid grey;
     border-radius: var(--border-radius);
-    margin: 5px;
+    margin: 10px 5px;
     background-color: white;
     cursor: pointer;
 }
