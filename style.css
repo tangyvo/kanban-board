@@ -1,5 +1,5 @@
 :root {
-    --background-color: rgb(255, 255, 255);
+    --background-color: rgb(247, 247, 247);
     --accent-color: rgb(226, 254, 252);
     --border-radius: 5px;
     --color-1: rgb(252, 188, 188);
@@ -7,6 +7,8 @@
     --color-3: rgb(245, 245, 169);
     --color-4: rgb(134, 197, 243);
 }
+
+/* New COMMENT */
 
 * {
     box-sizing: border-box;
