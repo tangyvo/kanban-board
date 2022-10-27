@@ -7,6 +7,7 @@ const tasks = document.querySelectorAll('.task');
 const saveBtn = document.querySelector('.btn-save');
 const deleteBtn = document.querySelector('.btn-delete');
 const taskContainers = document.querySelectorAll('.tasks-container');
+const addTaskIcon = document.querySelector('.add-task-icon');
 
 // Task Class
 class Tasks {
@@ -37,13 +38,15 @@ const reorderTasks = () => {
 };
 
 // Instaniate new task class and add to array + update UI
-const addNewTask = () => {
+const addNewTask = (textBox) => {
   const { tempTaskName, tempTaskType } = activeSection;
   const newTask = new Tasks(tempTaskType, tempTaskName);
 
   if (newTaskValidation(tempTaskName) > 0) {
+    textBox.style.border = '1px solid red';
     return;
   }
+  textBox.style.border = '1px solid black';
   allTasks.push(newTask);
   reorderTasks();
   updateLocaleStorage();
@@ -246,17 +249,17 @@ document.addEventListener('click', (e) => {
 
 // Pressing Enter key to add new task
 document.addEventListener('keypress', (e) => {
-  e.preventDefault();
   const modal = document.querySelector('.modal-backdrop');
-  if ((e.key === 'Enter' && !(activeSection.tempTaskName === '')) || e.keyCode === 13) {
-    addNewTask();
-
+  if (
+    (e.key === 'Enter' && !(activeSection.tempTaskName === '')) ||
+    e.keyCode === 13
+  ) {
+    const textBox = e.target.closest('div')
+    addNewTask(textBox);
   } else if (e.key === 'Enter' && !modal.className.includes('hide')) {
     saveModalChanges();
   }
 });
-
-//
 
 /*-------------------
 DRAG AND DROP

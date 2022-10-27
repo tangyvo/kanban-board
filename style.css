@@ -1,6 +1,7 @@
 :root {
     --background-color: rgb(255, 255, 255);
-    --accent-color: rgb(226, 254, 252);
+    --primary-color: rgb(245, 246, 246);
+    --secondary-color: rgb(226, 251, 253);
     --border-radius: 5px;
     --color-1: rgb(252, 188, 188);
     --color-2: rgb(177, 177, 213);
@@ -41,7 +42,7 @@ button {
 header {
     display: flex;
     justify-content: space-around;
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     height: 50px;
     width: 100vw;
 }
@@ -68,9 +69,10 @@ section {
 }
 
 .section-header span {
-    background-color:var(--accent-color);
+    background-color:var(--secondary-color);
     padding: 3px 10px;
     border-radius: var(--border-radius);
+    font-weight: 600;
 }
 
 /* TASKS */
@@ -127,12 +129,14 @@ section {
 /* ADD TASK INPUT */
 
 .add-task-section {
-    display: flex;
     border: 1px solid grey;
     border-radius: var(--border-radius);
-    margin: 10px 5px;
-    background-color: white;
+    margin: 10px;
     cursor: pointer;
+    background-color: var(--primary-color);
+
+    display: flex;
+    justify-content: center;
 }
 
 .add-task-icon {
@@ -141,6 +145,11 @@ section {
     text-align: center;
     margin: auto 0;
     font-size: 1.5rem;
+    align-self: center;
+}
+
+.add-task-icon:hover {
+    color: rgb(12, 95, 118);
 }
 
 .add-task {
@@ -149,7 +158,11 @@ section {
     width: 95%;
     align-self: center;
     position: relative;
+    letter-spacing: inherit;
+    font-size: inherit;
     border: 0;
+    background-color: transparent;
+    outline: none;
 }
 
 /* MODAL FOR EDITING TASKS */
@@ -258,7 +271,7 @@ section {
 .btn {
     border: none;
     font-size: var(--default-fontsize);
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     border-radius: var(--border-radius);
     padding: .75em 1.25em;
     box-shadow: 2px 2px 2px 1px rgba(0,0,0,.15);
